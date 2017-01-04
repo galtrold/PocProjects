@@ -1,20 +1,14 @@
-﻿using System;
-using System.IO;
-using System.Net.Sockets;
+﻿using System.Net.Sockets;
 using System.Text;
 using log4net.Appender;
 using log4net.Core;
-using log4net.Layout;
 
-namespace UdpLog.Appenders
+namespace NetworkLogAppender
 {
-
-
-
-    public class TcpTextAppender : AppenderSkeleton
+    public class UdpTextAppender : AppenderSkeleton
     {
        
-        public TcpTextAppender()
+        public UdpTextAppender()
         {
 
         }
@@ -37,7 +31,5 @@ namespace UdpLog.Appenders
             udpClient.Send(message, message.Length, "localhost", 8085);
             udpClient.Close();
         }
-
-
     }
 }
